@@ -12,3 +12,10 @@ services:
     volumes:
       - .:/src
     working_dir: /src
+
+  site:
+    <<: *core
+    ports:
+      - 5173:5173
+    command: pnpm run dev --host
+    container_name: site
