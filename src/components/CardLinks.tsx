@@ -1,10 +1,27 @@
-import React from "react";
+import { FC } from "react";
 
-const CardLinks = () => {
+export interface LinkCard {
+  url: string;
+  description: string;
+}
+
+export type CardLinksProps = {
+  links: LinkCard[],
+}
+
+const CardLinks: FC<CardLinksProps> = ({ links }) => {
   return (
     <>
-      <div>
-        <a>hello...</a>
+      <div className="links">
+        {
+          links.map((link) => (
+            <>
+              <div className="animate__animated animate__fadeInDown">
+                <a href={link.url}>{link.description}</a> <br/>
+              </div>
+            </>
+          ))
+        }
       </div>
     </>
   )

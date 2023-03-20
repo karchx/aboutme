@@ -1,10 +1,24 @@
 import {useState} from "react";
 import Typewriter from "typewriter-effect";
 import './App.css'
-import CardLinks from "./components/CardLinks";
+import CardLinks, {LinkCard} from "./components/CardLinks";
 
 function App() {
   const [showInfo, setShowInfo] = useState(false);
+  const links: LinkCard[] = [
+    {
+      url: "https://github.com/karchx",
+      description: "Github"
+    },
+    {
+      url: "https://twitter.com/keneth_stiv",
+      description: "Twitter"
+    },
+    {
+      url: "https://stiv-dev.vercel.app/",
+      description: "Portafolio",
+    }
+  ];
 
   return (
     <>
@@ -24,7 +38,7 @@ function App() {
       </div>
 
       {
-        showInfo ? <CardLinks /> : null
+        showInfo ? <CardLinks links={links} /> : null
       }
     </>
   )
