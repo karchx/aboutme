@@ -15,7 +15,7 @@ function App() {
       description: "Twitter"
     },
     {
-      url: "https://stiv-dev.vercel.app/",
+      url: "https://stiv-dev.com",
       description: "Portafolio",
     }
   ];
